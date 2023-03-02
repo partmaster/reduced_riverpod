@@ -5,7 +5,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/partmaster/reduced_riverpod)
 # reduced_riverpod
 
-Implementation of the 'reduced' API für the 'Riverpod' state management framework with following features:
+Implementation of the 'reduced' API for the 'Riverpod' state management framework with following features:
 
 1. Implementation of the ```Reducible``` interface 
 2. Add a state management scope.
@@ -165,7 +165,7 @@ final propsProvider = StateProvider(
 
 Implementations of the 'reduced' API are available for the following state management frameworks:
 
-|Framework|implementation package for 'reduced' API|
+|framework|implementation package for 'reduced' API|
 |---|---|
 |[Bloc](https://bloclibrary.dev/#/)|[reduced_bloc](https://github.com/partmaster/reduced_bloc)|
 |[Riverpod](https://riverpod.dev/)|[reduced_riverpod](https://github.com/partmaster/reduced_riverpod)|
