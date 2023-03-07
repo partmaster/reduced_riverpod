@@ -12,21 +12,19 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) => wrapWithScope(
+  Widget build(BuildContext context) => ReducedScope(
         child: MaterialApp(
           theme: ThemeData(primarySwatch: Colors.blue),
-          home: Builder(
-            builder: (context) => wrapWithConsumer(
-              provider: propsProvider,
-              builder: builder,
-            ),
+          home: ReducedConsumer(
+            provider: propsProvider,
+            builder: builder,
           ),
         ),
       );
 }
 
 final stateProvider = StateNotifierProvider(
-  (ref) => ReducibleStateNotifier(0),
+  (ref) => ReducedStateNotifier(0),
 );
 
 final propsProvider = StateProvider(
