@@ -12,5 +12,5 @@ class ReducedStateNotifier<S> extends StateNotifier<S>
   get state => super.state;
 
   @override
-  reduce(reducer) => state = reducer(state);
+  dispatch(event) => state = event(state);
 }
