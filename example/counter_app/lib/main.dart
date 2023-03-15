@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(primarySwatch: Colors.blue),
           home: ReducedConsumer(
             provider: propsProvider,
-            builder: builder,
+            builder: MyHomePage.new,
           ),
         ),
       );
@@ -31,7 +31,7 @@ final propsProvider = StateProvider(
   (ref) {
     final stateNotifier = ref.watch(stateProvider.notifier);
     return ref.watch(
-      stateProvider.select((state) => transformer(stateNotifier)),
+      stateProvider.select((state) => PropsMapper(stateNotifier.state, stateNotifier,),),
     );
   },
 );

@@ -19,9 +19,9 @@ void main() {
     expect(objectUnderTest.state, 1);
   });
 
-  test('ReducedStateNotifier reduce', () async {
+  test('ReducedStateNotifier process', () async {
     final objectUnderTest = ReducedStateNotifier(0);
-    objectUnderTest.dispatch(CounterIncremented());
+    objectUnderTest.process(CounterIncremented());
     expect(objectUnderTest.state, 1);
   });
 }

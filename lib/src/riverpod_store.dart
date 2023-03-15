@@ -5,12 +5,12 @@ import 'package:reduced/reduced.dart';
 
 /// Derivation of the class [StateNotifier] with support of the [ReducedStore] interface.
 class ReducedStateNotifier<S> extends StateNotifier<S>
-    implements ReducedStore<S> {
+    implements Store<S> {
   ReducedStateNotifier(super.state);
 
   @override
   get state => super.state;
 
   @override
-  dispatch(event) => state = event(state);
+  process(event) => state = event(state);
 }

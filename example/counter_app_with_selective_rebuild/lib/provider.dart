@@ -1,7 +1,7 @@
 import 'package:counter_app_with_selective_rebuild/state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:reduced_riverpod/reduced_riverpod.dart';
-import 'transformer.dart';
+import 'mappers.dart';
 
 final stateProvider = StateNotifierProvider(
   (ref) => ReducedStateNotifier(
@@ -16,7 +16,7 @@ final myHomePagePropsProvider = StateProvider(
     final stateNotifier = ref.watch(stateProvider.notifier);
     return ref.watch(
       stateProvider.select(
-        (state) => transformMyHomePageProps(stateNotifier),
+        (state) => MyHomePagePropsMapper(stateNotifier.state, stateNotifier,),
       ),
     );
   },
@@ -27,7 +27,7 @@ final myCounterWidgetPropsProvider = StateProvider(
     final stateNotifier = ref.watch(stateProvider.notifier);
     return ref.watch(
       stateProvider.select(
-        (state) => transformMyCounterWidgetProps(stateNotifier),
+        (state) => MyCounterWidgetPropsMapper(stateNotifier.state, stateNotifier,),
       ),
     );
   },

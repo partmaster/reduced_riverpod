@@ -14,7 +14,7 @@ class ReducedConsumer<P> extends StatelessWidget {
   });
 
   final StateProvider<P> provider;
-  final ReducedWidgetBuilder<P> builder;
+  final WidgetFromPropsBuilder<P> builder;
 
   @override
   Widget build(BuildContext context) => Consumer(

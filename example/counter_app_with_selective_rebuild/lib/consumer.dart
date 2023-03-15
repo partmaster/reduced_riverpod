@@ -1,5 +1,6 @@
 // consumer.dart
 
+import 'package:counter_app_with_selective_rebuild/state.dart';
 import 'package:flutter/widgets.dart';
 import 'package:reduced/reduced.dart';
 import 'package:reduced_riverpod/reduced_riverpod.dart';
@@ -13,7 +14,7 @@ class MyHomePagePropsConsumer extends StatelessWidget {
     required this.builder,
   });
 
-  final ReducedWidgetBuilder<MyHomePageProps> builder;
+  final WidgetFromPropsBuilder<MyHomePageProps> builder;
 
   @override
   Widget build(BuildContext context) => ReducedConsumer(
@@ -28,7 +29,7 @@ class MyCounterWidgetPropsConsumer extends StatelessWidget {
     required this.builder,
   });
 
-  final ReducedWidgetBuilder<MyCounterWidgetProps> builder;
+  final WidgetFromPropsBuilder<MyCounterWidgetProps> builder;
 
   @override
   Widget build(context) => ReducedConsumer(
