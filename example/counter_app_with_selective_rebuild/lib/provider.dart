@@ -16,7 +16,10 @@ final myHomePagePropsProvider = StateProvider(
     final stateNotifier = ref.watch(stateProvider.notifier);
     return ref.watch(
       stateProvider.select(
-        (state) => MyHomePagePropsMapper(stateNotifier.state, stateNotifier,),
+        (state) => MyHomePagePropsMapper(
+          stateNotifier.state,
+          stateNotifier,
+        ),
       ),
     );
   },
@@ -27,7 +30,10 @@ final myCounterWidgetPropsProvider = StateProvider(
     final stateNotifier = ref.watch(stateProvider.notifier);
     return ref.watch(
       stateProvider.select(
-        (state) => MyCounterWidgetPropsMapper(stateNotifier.state, stateNotifier,),
+        (state) => MyCounterWidgetPropsMapper(
+          stateNotifier.state,
+          stateNotifier,
+        ),
       ),
     );
   },

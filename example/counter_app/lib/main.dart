@@ -31,7 +31,12 @@ final propsProvider = StateProvider(
   (ref) {
     final stateNotifier = ref.watch(stateProvider.notifier);
     return ref.watch(
-      stateProvider.select((state) => PropsMapper(stateNotifier.state, stateNotifier,),),
+      stateProvider.select(
+        (state) => PropsMapper(
+          stateNotifier.state,
+          stateNotifier,
+        ),
+      ),
     );
   },
 );
